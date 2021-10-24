@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d3436;
+}
+
+.todo-list{
+    width: 350px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.todo-list header{
+    margin: 0;
+    padding: 1em 0;
+    color: crimson;
+    text-align: center;
+    border-top: 1em solid crimson;
+    border-bottom: 1px solid #eee;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    background-color: #fff;
+}
+
+.todo-list footer{
+    margin: 0;
+    padding: .7em 0;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    background-color: #fff;
+    
+}
+
+.todo-list .do input[type=checkbox]{
+    width: 0;
+    height: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+.todo-list .do label{
+    position: relative;
+    display: block;
+    padding: .75em 1em;
+    cursor: pointer;
+    background-color: white;
+    transition: 0.3s  ease-in-out;
+}
+
+.todo-list .do label:hover{
+    transform: translateX(-1em);
+}
+
+.todo-list .do label::before{
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid red;
+    margin-right: 0.5em;
+    vertical-align: middle;
+}
+
+.todo-list .do label::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background-color:red;
+    transition: 0.3s ease-in-out;
+}
+
+.todo-list .do label .fa-check{
+    position: absolute;
+    left: .7em;
+    top: 0.25em;
+    position: absolute  ;
+    color: red;
+    font-size: 1.7em;
+    opacity: 0;
+}
+
+.todo-list .do input[type=checkbox]:checked + label .fa-check{
+    opacity: 1;
+}
